@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/incubation_planner-0.0.1-SNAPSHOT.jar
+web: java -jar -Dserver.port=$PORT target/incubation_planner-0.0.1-SNAPSHOT.jar
