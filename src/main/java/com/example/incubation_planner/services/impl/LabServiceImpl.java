@@ -2,43 +2,33 @@ package com.example.incubation_planner.services.impl;
 
 import com.example.incubation_planner.models.entity.Lab;
 import com.example.incubation_planner.models.entity.Project;
-import com.example.incubation_planner.models.service.LabServiceModel;
 import com.example.incubation_planner.repositories.LabRepository;
 import com.example.incubation_planner.services.EquipmentService;
 import com.example.incubation_planner.services.LabService;
-import com.google.gson.Gson;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 
 @Service
 public class LabServiceImpl implements LabService {
 
-    private final Resource labs;
-    private final Gson gson;
     private final LabRepository labRepository;
     private final EquipmentService equipmentService;
     private final ModelMapper modelMapper;
 
     public LabServiceImpl(
-            @Value("classpath:init/labs.json") Resource labs,
-            Gson gson,
             LabRepository labRepository,
             EquipmentService equipmentService,
             ModelMapper modelMapper
     ) {
 
-        this.labs = labs;
-        this.gson = gson;
         this.labRepository = labRepository;
         this.equipmentService = equipmentService;
         this.modelMapper = modelMapper;
@@ -47,20 +37,23 @@ public class LabServiceImpl implements LabService {
     @Override
     public void seedLabs() {
         if (labRepository.count() == 0) {
-            try {
-                LabServiceModel[] labServiceModels = gson.fromJson(Files.readString(Path.of(labs.getURI())), LabServiceModel[].class);
-                Arrays.stream(labServiceModels)
-                        .forEach(m -> {
-                            List<Project> emptyList = new ArrayList<>();
-                            Lab current = modelMapper.map(m, Lab.class);
-                            current.setEquipment(equipmentService.findEquipment(m.getEquipment()));
-                            current.setProjects(emptyList);
-                            labRepository.save(current);
-                        });
-
-            } catch (IOException e) {
-                throw new IllegalStateException("Cannot seed Labs");
-            }
+            Lab lab1 = new Lab();
+            lab1.setName("Leonardo").setName("Wood workshop");
+            Lab lab2 = new Lab();
+            lab2.setName("Tesla").setName("Metal workshop");
+            Lab lab3 = new Lab();
+            lab3.setName("Lumiere").setName("Digital production workshop");
+            Lab lab4 = new Lab();
+            lab4.setName("Bell").setName("Prototyping space");
+            Lab lab5 = new Lab();
+            lab5.setName("Monnet").setName("Computers, Multimedia, Printers");
+            Lab lab6 = new Lab();
+            lab6.setName("Ideation").setName("Computers, Multimedia, Printers");
+            Lab lab7 = new Lab();
+            lab7.setName("STEM&Art").setName("Computers, Multimedia, Printers");
+            Lab lab8 = new Lab();
+            lab8.setName("Carnegie").setName("Computers, Multimedia, Printers");
+            labRepository.saveAll(List.of(lab1, lab2, lab3, lab4, lab5, lab6, lab7, lab8));
 
         }
     }
