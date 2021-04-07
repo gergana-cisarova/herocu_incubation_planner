@@ -5,7 +5,6 @@ import com.example.incubation_planner.models.entity.LogEntity;
 import com.example.incubation_planner.models.entity.Project;
 import com.example.incubation_planner.models.entity.UserEntity;
 import com.example.incubation_planner.models.service.IdeaLogServiceModel;
-import com.example.incubation_planner.models.service.IdeaServiceModel;
 import com.example.incubation_planner.models.service.ProjectServiceModel;
 import com.example.incubation_planner.models.view.AddIdeaLogViewModel;
 import com.example.incubation_planner.models.view.JoinProjectLogViewModel;
@@ -22,9 +21,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
