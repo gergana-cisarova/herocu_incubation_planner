@@ -56,7 +56,6 @@ public class IdeaServiceImpl implements IdeaService {
     }
 
     @Override
-    @Transactional
     public List<IdeaViewModel> getAll() {
         return ideaRepository
                 .findAllByOrderByStatusDesc()
