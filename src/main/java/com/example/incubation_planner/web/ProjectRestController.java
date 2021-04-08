@@ -16,7 +16,7 @@ import java.util.List;
 
 @RequestMapping("/manageProjects")
 @RestController
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "https://incubation-planner.herokuapp.com/")
 public class ProjectRestController {
 
     private final ProjectService projectService;

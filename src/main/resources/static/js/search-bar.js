@@ -4,7 +4,7 @@ const allBtn = document.getElementById('all');
 const myProjectBtn = document.getElementById('own');
 const collabsBtn = document.getElementById('collabs');
 const allProjects = [];
-fetch("http://localhost:8080/manageProjects/api")
+fetch("https://incubation-planner.herokuapp.com/manageProjects/api")
     .then(response => response.json())
     .then(data => {
         for (let d of data) {
@@ -13,7 +13,7 @@ fetch("http://localhost:8080/manageProjects/api")
     });
 
 const myProjects = [];
-fetch("http://localhost:8080/manageProjects/own")
+fetch("https://incubation-planner.herokuapp.com/manageProjects/own")
     .then(response => response.json())
     .then(data => {
         for (let d of data) {
@@ -22,7 +22,7 @@ fetch("http://localhost:8080/manageProjects/own")
     });
 
 const myCollabProjects = [];
-fetch("http://localhost:8080/manageProjects/collaborations")
+fetch("https://incubation-planner.herokuapp.com/manageProjects/collaborations")
     .then(response => response.json())
     .then(data => {
         for (let d of data) {
