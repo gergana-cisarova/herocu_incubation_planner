@@ -38,21 +38,21 @@ public class LabServiceImpl implements LabService {
     public void seedLabs() {
         if (labRepository.count() == 0) {
             Lab lab1 = new Lab();
-            lab1.setName("Leonardo").setName("Wood workshop");
+            lab1.setName("Leonardo").setEquipment(equipmentService.findEquipment("Wood workshop"));
             Lab lab2 = new Lab();
-            lab2.setName("Tesla").setName("Metal workshop");
+            lab2.setName("Tesla").setEquipment(equipmentService.findEquipment("Metal workshop"));
             Lab lab3 = new Lab();
-            lab3.setName("Lumiere").setName("Digital production workshop");
+            lab3.setName("Lumiere").setEquipment(equipmentService.findEquipment("Digital production workshop"));
             Lab lab4 = new Lab();
-            lab4.setName("Bell").setName("Prototyping space");
+            lab4.setName("Bell").setEquipment(equipmentService.findEquipment("Prototyping space"));
             Lab lab5 = new Lab();
-            lab5.setName("Monnet").setName("Computers, Multimedia, Printers");
+            lab5.setName("Monnet").setEquipment(equipmentService.findEquipment("Computers, Multimedia, Printers"));
             Lab lab6 = new Lab();
-            lab6.setName("Ideation").setName("Computers, Multimedia, Printers");
+            lab6.setName("Ideation").setEquipment(equipmentService.findEquipment("Computers, Multimedia, Printers"));
             Lab lab7 = new Lab();
-            lab7.setName("STEM&Art").setName("Computers, Multimedia, Printers");
+            lab7.setName("STEM&Art").setEquipment(equipmentService.findEquipment("Computers, Multimedia, Printers"));
             Lab lab8 = new Lab();
-            lab8.setName("Carnegie").setName("Computers, Multimedia, Printers");
+            lab8.setName("Carnegie").setEquipment(equipmentService.findEquipment("Computers, Multimedia, Printers"));
             labRepository.saveAll(List.of(lab1, lab2, lab3, lab4, lab5, lab6, lab7, lab8));
 
         }
