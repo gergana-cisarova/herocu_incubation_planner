@@ -44,7 +44,7 @@
                                 class="form-control"
                                 aria-describedby="nameHelpInline">
                         <p class="text-primary" >Previous name:
-                        <br class="text-primary" th:text="${current.name}"></p>
+                            <br class="text-primary" th:text="${current.name}"></p>
                         <small id="nameError" class="invalid-feedback text-light form-text bg-danger rounded">The name
                             must be at least 3 characters long and not longer than 250 characters</small>
 
@@ -86,7 +86,7 @@
                                                   aria-describedby="descriptionInline">
                                         </textarea>
                         <p class="text-primary">Previous description:
-                        <br th:text="${current.description}"></p>
+                            <br th:text="${current.description}"></p>
                         <small id="descriptionError"
                                class="invalid-feedback text-light form-text bg-danger rounded">The description must be
                             at least 10 characters long and not longer than 1500 characters</small>
@@ -186,7 +186,7 @@
                         <input required name="startDate"
                                th:value="*{startDate}"
                                th:errorclass="is-invalid"
-                               type="datetime-local"
+                               type="date"
                                id="inputStartDate"
                                class="form-control"
                                aria-describedby="startDateHelpInline">
@@ -207,7 +207,7 @@
                         <input required name="endDate"
                                th:value="*{endDate}"
                                th:errorclass="is-invalid"
-                               type="datetime-local"
+                               type="date"
                                id="inputEndDate"
                                class="form-control"
                                aria-describedby="endDateHelpInline">

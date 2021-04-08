@@ -2,7 +2,7 @@ package com.example.incubation_planner.models.service;
 
 import com.example.incubation_planner.models.entity.enums.Sector;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class ProjectServiceModel {
 
@@ -10,8 +10,8 @@ public class ProjectServiceModel {
     private String name;
     private Sector sector;
     private String description;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private String activityType;
     private String neededEquipment;
     private String lab;
@@ -53,20 +53,20 @@ public class ProjectServiceModel {
         return this;
     }
 
-    public LocalDateTime getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public ProjectServiceModel setStartDate(LocalDateTime startDate) {
+    public ProjectServiceModel setStartDate(LocalDate startDate) {
         this.startDate = startDate;
         return this;
     }
 
-    public LocalDateTime getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public ProjectServiceModel setEndDate(LocalDateTime endDate) {
+    public ProjectServiceModel setEndDate(LocalDate endDate) {
         this.endDate = endDate;
         return this;
     }
